@@ -25,7 +25,7 @@ public static void main(String[] args) {
      Integer x = g1.show();
      System.out.println(x);
 
-     // CASE 4 : CONCEPT OF AUTO UNBOXING
+     // CASE 4 : CONCEPT OF AUTO BOXING
      Gen<Integer> g1 = new Gen<Integer>(100);
      int x = g1.show();
      System.out.println(x);
