@@ -1,0 +1,64 @@
+
+The System class in Java is part of the java.lang package and provides various useful methods and fields for performing system-level operations. It is a final class, which means it cannot be extended, and its constructor is private, so it cannot be instantiated. All its methods and fields are static, allowing them to be accessed directly.
+
+
+examples:
+
+1.  public static final PrintStream out , err    
+    PrintStream instance for standard output. Commonly used for printing text to the console.
+
+
+2. public static final InputStream in
+    InputStream instance that facilitates reading input from the console. Used in conjunction with classes like Scanner for acquiring user input during program execution.
+
+
+3.  public static void	gc()	Runs the garbage collector.
+
+
+4.  public static void	arraycopy
+    Copies an array from the specified source array, beginning at the specified position, to the specified position of the destination array.
+
+
+5.  public static long	currentTimeMillis()	
+    Returns the current time in milliseconds.
+
+
+
+                    //   Key Features of the System Class (Short Summary)
+
+
+    1. Standard Input/Output/Error Streams:
+    
+    System.in: Standard input (keyboard).
+    System.out: Standard output (console).
+    System.err: Standard error output (console).
+
+    2. Environment Properties and Variables:
+    
+    getProperty(String key): Gets a system property.
+    setProperty(String key, String value): Sets a system property.
+    getenv(String name): Gets an environment variable.
+
+
+    3. Utility Methods:
+    
+    currentTimeMillis(): Returns current time in milliseconds since the Unix epoch.
+    nanoTime(): Provides high-resolution time in nanoseconds.
+    gc(): Suggests garbage collection.
+    exit(int status): Terminates the JVM.
+
+
+    4. Array Copying:
+    
+    arraycopy(Object src, int srcPos, Object dest, int destPos, int length): Copies elements from one array to another.
+
+
+    5. Security Manager:
+    
+    getSecurityManager(): Gets the current security manager.
+    setSecurityManager(SecurityManager sm): Sets a security manager to control system resource access.
+    
+    
+    
+    
+                          

@@ -1,0 +1,50 @@
+Loops are used in programming to repeat a block of code multiple times. Java provides several types of loops: while, for, do-while, labeled for, and nested for loops. Here’s a detailed explanation of each type with examples:
+
+1. while Loop
+
+The while loop repeatedly executes a block of code as long as a given condition is true.
+
+// Syntax 
+
+while (condition) {
+    // Code to execute while condition is true
+}
+
+2. for Loop
+The for loop is used when you know the number of iterations in advance. It consists of three parts: initialization, condition, and increment/decrement.
+
+// Syntax
+
+for (initialization; condition; increment/decrement) {
+    // Code to execute
+}
+
+3. do-while Loop
+The do-while loop is similar to the while loop, but it guarantees that the code block will execute at least once because the condition is evaluated after the code block.
+
+// Syntax:
+
+do {
+    // Code to execute
+} while (condition);
+
+4. Labeled for Loop
+A labeled for loop is useful when you have nested loops and want to break or continue a specific loop. You can label any loop with a name and then use that label in a break or continue statement.
+
+// Syntax
+
+labelName:
+for (initialization; condition; increment/decrement) {
+    // Code to execute
+}
+
+5. Nested for Loop
+A nested for loop is simply a for loop inside another for loop. This is useful for working with multi-dimensional data like matrices or grids.
+
+Syntax:
+
+for (initialization; condition; increment/decrement) {
+    for (initialization; condition; increment/decrement) {
+        // Code to execute
+    }
+}

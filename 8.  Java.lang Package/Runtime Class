@@ -1,0 +1,20 @@
+
+In Java, the Runtime class is used to interact with Every Java application that has a single instance of class Runtime that allows the application to interface with the environment in which the application is running. The current runtime can be obtained from the getRuntime() method.
+
+Methods ;
+
+1. totalMemory(): Returns the total amount of memory available to the Java Virtual Machine (JVM).
+
+   long totalMemory = runtime.totalMemory();
+
+2. freeMemory(): Returns the amount of free memory currently available for new objects.
+
+   long freeMemory = runtime.freeMemory();
+
+3. maxMemory(): Returns the maximum amount of memory that the JVM can attempt to use.
+
+   long maxMemory = runtime.maxMemory();
+
+4. gc(): Requests the garbage collector to run and reclaim any memory from objects that are no  longer in use.
+
+   runtime.gc(); // Suggests the JVM to perform garbage collection

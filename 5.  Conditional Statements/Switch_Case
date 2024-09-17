@@ -1,0 +1,47 @@
+The switch statement is an alternative to using multiple if-else statements when you have multiple conditions based on the same variable or expression. It simplifies the code by making it more readable and organized.
+
+<!-- Syntax of switch Statement -->
+
+switch (variable) {
+    case value1:
+        break;
+    case value2:
+        break; 
+    default:
+      
+        break;
+}
+
+<!-- Program -->
+
+public class Switch_Case {
+    public static void main(String[] args) {
+        int dayNumber = 3;
+
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Invalid day number. Please enter a number between 1 and 7.");
+                break;
+        }
+    }
+

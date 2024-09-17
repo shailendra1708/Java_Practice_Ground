@@ -1,0 +1,28 @@
+
+Object class is present in java.lang package. Every class in Java is directly or indirectly derived from the Object class. If a class does not extend any other class then it is a direct child class of Object and if extends another class then it is indirectly derived. Therefore the Object class methods are available to all Java classes. Hence Object class acts as a root of the inheritance hierarchy in any Java Program.
+
+There are 11 methods:
+
+1.  clone() method : It returns a new object that is exactly the same as this object. 
+    For clone() method refer Clone().
+
+2. boolean equals (Object ob)
+
+3. finalize() method : This method is called just before an object is garbage collected. It is   called the Garbage Collector on an object when the garbage collector determines that there are no more references to the object.
+
+
+4. getClass() method : It returns the class object of “this” object and is used to get the actual runtime class of the object. 
+
+5. hashCode() method : For every object, JVM generates a unique number which is a hashcode
+
+6. notify() : Wakes up a single thread that is waiting on the object's monitor. This is used for thread synchronization.
+
+7. notifyAll() : Wakes up all threads that are waiting on the object's monitor.
+
+8. toString() method : The toString() provides a String representation of an object and is used  to convert an object to a String. 
+
+9. void wait ()
+
+10. void wait ( long millisecond )
+
+11. void wait (long millisecond, int nanosecond )

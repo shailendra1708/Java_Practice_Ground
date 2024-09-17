@@ -1,0 +1,9 @@
+                            JVM, JRE and JDK
+
+- JVM-Java Virtual Machine - specification
+
+- JRE-Java Runtime Environment-It is the implementation of JVM
+  JRE = JVM + Library classs
+
+- JDK-Java Development Kit- Kit that contain Development tools, JRE
+  JDK = JRE + Development tools

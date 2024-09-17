@@ -1,0 +1,22 @@
+Operator in Java is a symbol that is used to perform operations. For example: +, -, *, / etc.
+
+1. Unary Operator
+(a) ++ = increment
+(b) -- = decrement
+(c) a++ = post increment
+(d) ++a = pre increment
+(e) a-- = post decrement
+(f) --a = pre decrement
+
+
+2. Binary Operator
+(A) Arithemetic Operator = ( +  -  *  /  % ) 
+(B) Relational Operator  (  <  <=  >  >=  !=  ==  )
+(C) Logical Operator  ( && AND     || OR )
+(D) Bitwise Operator ( &  |  ^  <<  >>  >>>)
+(E) Compound Operator ( +=  -=  *=  /=  %= )
+(F) Assignment Operator (  =  )
+
+
+3. Ternary Operator 
+(A) Conditional Operator :  ?  :

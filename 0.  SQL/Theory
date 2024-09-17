@@ -1,0 +1,281 @@
+SQL is a standard language for storing, manipulating and retrieving data in databases.
+
+What is SQL?
+SQL stands for Structured Query Language
+SQL lets you access and manipulate databases
+SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987
+
+<!-- SQL keywords are NOT case sensitive: select is the same as SELECT -->
+
+What Can SQL do?
+SQL can execute queries against a database
+SQL can retrieve data from a database
+SQL can insert records in a database
+SQL can update records in a database
+SQL can delete records from a database
+SQL can create new databases
+SQL can create new tables in a database
+SQL can create stored procedures in a database
+SQL can create views in a database
+SQL can set permissions on tables, procedures, and views
+
+
+SQL consist of 5 technology:
+ 
+1. DDL : Data Definition Language (DDL) commands are a subset of SQL used to define and modify the database schema.
+ a. CREATE Command : The CREATE command is used to create new databases, tables, and other database objects. 
+ b. DROP Command : The DROP command is utilized to delete objects from the database.
+ c. ALTER Command : The ALTER command allows you to modify the existing structure of database objects.
+
+
+2. DML : Data Manipulation Language commands are used to modify the database. It is responsible for all form of changes in the database.
+ a. INSERT: The INSERT statement is a SQL query.
+ b. UPDATE: This command is used to update or modify the value of a column in the table.
+ c. DELETE: It is used to remove one or more row from a table. 
+
+
+
+3. DCL : Data Control Language commands are used to grant and take back authority from any database user.
+ a. Grant : Used to give permission to the user.
+ b. Revoke: It is used to take back permissions from the user.
+
+
+4. TCL : Transaction Control Language
+Transactions are atomic i.e. either every statement succeeds or none of statement succeeds.
+ a. Commit: Commit command is used to save all the transactions to the database. It makes your changes permanent and ends the transaction.
+ b. Rollback: Rollback command is used to undo transactions that have not already been saved to the database. Rollback also serves to end the current transaction and begin a new one.
+ c. SAVEPOINT: It is used to roll the transaction back to a certain point without rolling back the entire transaction.
+
+-------------------------------------------------------------------------------------------------
+
+QUERIES:
+
+SHOW DATABASES;                                             // to check previous database //
+CREATE DATABASES db30;                                     // name of database //
+USE db30;                                                 // opening the database //
+CREATE TABLES student ( studentid int,
+                        studentname varchar (20),
+                        studentsalary int, 
+                        studentcity varcar (20));
+
+
+DESC student;                                               // shows the data of table emp //
+
+INSERT INTO student VALUES (2202563,'Ram',100000,'Indore');     // To insert data //
+
+-- To add multiple data dont write query again and again  
+
+INSERT INTO student  VALUES (2202563,'Ram',100000,'Indore'),(2202565,'Aman',150000,'Indore'),(2202564,'Shyam',120000,'Indore');
+
+
+-- If in case  data of any column is not available 
+
+INSERT INTO student (studentid , studentname, studentcity ) VALUES (2202569,'Mohan','Bhopal');
+
+-- To  print the data from the table 
+
+SELECT (studentid , studentname, studentcity varcar ) FROM student;
+
+or
+
+SELECT * FROM student;
+
+-- You can give any condition 
+
+ SELECT * FROM emp WHERE empsalary > 100000;
+ SELECT * FROM emp WHERE empsalary >= 100000;
+ SELECT * FROM emp WHERE empsalary < 100000;
+ SELECT * FROM emp WHERE empsalary <= 100000;
+ SELECT * FROM emp WHERE empsalary = 100000;
+ SELECT * FROM emp WHERE empsalary !> 100000;
+ SELECT * FROM emp WHERE empsalary <> 100000;
+ SELECT * FROM emp WHERE empsalary = NULL;           // not give output
+ SELECT * FROM emp WHERE empsalary IS NULL;         //give output
+ SELECT * FROM emp WHERE empsalary IS NOT NULL;
+ 
+ SELECT * FROM emp WHERE empsalary > 100000 AND empcity='Indore';
+ SELECT * FROM emp WHERE empsalary > 100000 OR empcity='Indore';
+
+
+--  TO find any data that starts with a particular letter 
+SELECT * FROM  student WHERE studentname like 'A%';
+SELECT * FROM  student WHERE studentname like '%R';
+
+
+-- At least one "a" in the name
+SELECT * FROM  student WHERE studentname like '% a %';
+
+
+-- " a " at second position in the database 
+SELECT * FROM  student WHERE studentname like '_a %';
+
+
+-- if i need a name of three letters 
+SELECT * FROM  student WHERE studentname like '___';
+
+
+-- if i need a name in which minimum three letters 
+SELECT * FROM  student WHERE studentname like '___%'; 
+
+
+-- Here as is used to write the column name
+SELECT 2+2;
+SELECT 2+2 as Total;  
+
+
+-- if we want to change to change name of column in database temporarily we us "as"
+SELECT empid, empname as "emp ka naam", empsalary, empcity FROM emp;
+
+SELECT empid, empname as "emp ka naam", empsalary, (empsalary + empsalary*0.1), empcity FROM emp;
+
+-- if i dont like name of column // (empsalary + empsalary*0.1) // we use " as " 
+SELECT empid, empname , empsalary, (empsalary + empsalary*0.1) as 'Salary with bonous', empcity FROM emp;
+
+
+
+Common SQL Aggregate Functions:
+
+1. SUM(): Calculates the total sum of a numeric column.
+-  SELECT SUM(empsalary) FROM emp;
+
+
+2. MIN(): Finds the minimum value in a column.
+-  SELECT MIN(empsalary) FROM emp;                                         // show only minimum salary
+-  SELECT * FROM emp WHERE empsalary = (SELECT MIN(empsalary) FROM emp);   // show whose minimum salary is
+
+
+3. MAX(): Finds the maximum value in a column.
+-  SELECT MAX(empsalary) FROM emp;                                         // show only maximum salary
+-  SELECT * FROM emp WHERE empsalary = (SELECT MAX(empsalary) FROM emp); // nested query    // show whose maximum salary is
+
+4. AVG(): Calculates the average value of a numeric column.
+-  SELECT AVG(empsalary) FROM emp;
+-  SELECT SUM (empsalary)/COUNT(empsalary) FROM emp ;
++---------------------------------+
+| SUM(empsalary)/COUNT(empsalary) |
++---------------------------------+
+|                      60000.0000 |
++---------------------------------+
+ 
+
+5. COUNT(): Counts the number of rows in a dataset.
+
+-  SELECT COUNT(empsalary) FROM emp;
+-  SELECT COUNT(*) FROM emp;
+
+-- If you want to chang the data in table we use UPDATE query
+
+ UPDATE emp SET empsalary=5000 WHERE empname='John';
+ UPDATE emp SET empsalary=5000 WHERE empid='2205478';
+
+
+LIMIT
+SELECT * FROM emp limit 0 , 2 (no. of records ) ;  
+SELECT * FROM emp limit 1 , 3 ;
+
+-- if you want to print something but dont want to print same data
+SELECT DISTINCT(empcity) FROM emp;
+
+
+-- if we want to sort data from ascending to descending or vice - versa we use
+-- The ORDER BY clause in SQL is used to sort the result set of a query by one or more columns
+
+SELECT * FROM emp ORDER BY empsalary; // ascending
++---------+------------+-----------+---------+
+| empid   | empname    | empsalary | empcity |
++---------+------------+-----------+---------+
+| 2202563 | Ram        |      NULL | Indore  |
+| 2202578 | John       |      5000 | Rau     |
+| 2202563 | Shailendra |     10000 | Indore  |
+| 2202563 | Shailendra |     10000 | Indore  |
+| 2202563 | Shailendra |     10000 | Indore  |
+| 2202564 | Shyam      |    120000 | Indore  |
+| 2202565 | Aman       |    150000 | Indore  |
++---------+------------+-----------+---------+
+
+ 
+SELECT * FROM emp ORDER BY empsalary DESC; // decending
+
++---------+------------+-----------+---------+
+| empid   | empname    | empsalary | empcity |
++---------+------------+-----------+---------+
+| 2202565 | Aman       |    150000 | Indore  |
+| 2202564 | Shyam      |    120000 | Indore  |
+| 2202563 | Shailendra |     10000 | Indore  |
+| 2202563 | Shailendra |     10000 | Indore  |
+| 2202563 | Shailendra |     10000 | Indore  |
+| 2202578 | John       |      5000 | Rau     |
+| 2202563 | Ram        |      NULL | Indore  |
++---------+------------+-----------+---------+
+
+SELECT DISTINCT(empsalary) FROM emp ORDER BY empsalary DESC;
+
++-----------+
+| empsalary |
++-----------+
+|    150000 |
+|    120000 |
+|     10000 |
+|      5000 |
+|      NULL |
++-----------+ 
+
+-- If you want to group data we use GROUP BY
+
+SELECT empcity,count(empcity) fromemp GROUP BY empcity;
+
++---------+----------------+
+| empcity | count(empcity) |
++---------+----------------+
+| Indore  |              6 |
+| Rau     |              1 |
++---------+----------------+
+
+-- Privacy protection
+CREATE TABLE empcopy AS ( SELECT empid,empname,empcity FROM emp);
+
+
+-- ALTER TABLE statement is used to make changes to the structure of an existing table.
+
+ALTER TABLE emp ADD COLUMN mailid varchar(40) AFTER empname;
+
++---------+------------+--------+-----------+---------+
+| empid   | empname    | mailid | empsalary | empcity |
++---------+------------+--------+-----------+---------+
+| 2202563 | Shailendra | NULL   |     10000 | Indore  |
+| 2202563 | Shailendra | NULL   |     10000 | Indore  |
+| 2202563 | Shailendra | NULL   |     10000 | Indore  |
+| 2202565 | Aman       | NULL   |    150000 | Indore  |
+| 2202564 | Shyam      | NULL   |    120000 | Indore  |
+| 2202563 | Ram        | NULL   |      NULL | Indore  |
+| 2202578 | John       | NULL   |      5000 | Rau     |
++---------+------------+--------+-----------+---------+
+
+
+ALTER TABLE emp ADD COLUMN contacts INT FIRST; 
+
++----------+---------+------------+--------+-----------+---------+
+| contacts | empid   | empname    | mailid | empsalary | empcity |
++----------+---------+------------+--------+-----------+---------+
+|     NULL | 2202563 | Shailendra | NULL   |     10000 | Indore  |
+|     NULL | 2202563 | Shailendra | NULL   |     10000 | Indore  |
+|     NULL | 2202563 | Shailendra | NULL   |     10000 | Indore  |
+|     NULL | 2202565 | Aman       | NULL   |    150000 | Indore  |
+|     NULL | 2202564 | Shyam      | NULL   |    120000 | Indore  |
+|     NULL | 2202563 | Ram        | NULL   |      NULL | Indore  |
+|     NULL | 2202578 | John       | NULL   |      5000 | Rau     |
++----------+---------+------------+--------+-----------+---------+
+
+ALTER TABLE emp CHANGE contact empcontact varchar(13);
++------------+---------+------------+--------+-----------+---------+
+| empcontact | empid   | empname    | mailid | empsalary | empcity |
++------------+---------+------------+--------+-----------+---------+
+| NULL       | 2202563 | Shailendra | NULL   |     10000 | Indore  |
+| NULL       | 2202563 | Shailendra | NULL   |     10000 | Indore  |
+| NULL       | 2202563 | Shailendra | NULL   |     10000 | Indore  |
+| NULL       | 2202565 | Aman       | NULL   |    150000 | Indore  |
+| NULL       | 2202564 | Shyam      | NULL   |    120000 | Indore  |
+| NULL       | 2202563 | Ram        | NULL   |      NULL | Indore  |
+| NULL       | 2202578 | John       | NULL   |      5000 | Rau     |
++------------+---------+------------+--------+-----------+---------+
+ 

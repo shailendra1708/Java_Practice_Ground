@@ -1,0 +1,29 @@
+ n SQL, keys are attributes or combinations of attributes that uniquely identify a row in a table. They enforce entity integrity and establish relationships between tables in a relational database. There are several types of keys in SQL, each serving a specific purpose. 
+
+
+ Types of SQL Keys: 
+
+ 1. Primary Key (PK):
+   Function: A primary key uniquely identifies each record in a table and ensures that there are no duplicate values.
+
+Properties: Cannot contain NULL values and must be unique for each record.
+
+2. Foreign Key (FK):
+Function: A foreign key establishes a relationship between two tables by referencing the primary key of another table.
+
+Properties: Ensures referential integrity by enforcing that values in the foreign key column must exist in the referenced table's primary key column.
+
+
+3. Unique Key:
+Function: A unique key ensures that values in a column or a combination of columns are unique, similar to a primary key.
+
+Properties: Allows NULL values, but does not allow duplicate values.
+ 
+
+4. Candidate Key:
+Function: A candidate key is a set of attributes that can uniquely identify a record in a table.
+
+
+5. Composite Key:
+Function: A composite key is a combination of two or more columns that together uniquely identify a record.
+

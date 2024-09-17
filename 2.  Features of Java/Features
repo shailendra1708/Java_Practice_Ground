@@ -1,0 +1,46 @@
+(1) Java is Platform independent language:
+Because of the byte code functionality java is called Platform independent language
+
+(2) Platform neutral / architectural neutral:
+Memory allocation of variables is completely independent from the systems architecture in Java & all the variables will be always allocates a constant amount of memory on all the architectures.
+
+(3) Simple and Secure:
+Java is a simple language for on experienced programmer becoz it follows the hierarchy.
+
+    Java is a secure language because:
+
+(a) It has high encryption standard.
+(b) It has byte code security
+(c) Java does not support pointer variables.
+
+(4) Robust (strong);
+Java is robust because of three properties:
+(a) Strictly type checked
+
+    int a = 10.65;
+
+This line was a valid statement in C & C++ because implicit type casting it will be because of data type mismatch. Invalid in java
+
+(b) Garbage collector: It is a thread that will execute after the completion of every program, it will collect the memory (object) used by the program.
+
+(c) Exception Handling: A run time error is called an exception and a mechanism that can handles error is called Exception Handling Mechanism.
+
+(5) Java supports Multi Threading:
+
+A thread is a light weight process ( part of a process and capability of system multiple threads Simuntaneously is called threading. )
+
+(6) Java is an Object Oriented Languages :
+Class: It is a user defined entity. It is A a collection of variables and methods.
+
+Object is a run time on real time entity it is also known as instaneous of a class and it has the authority to excess any content of the class.
+
+Abstraction/ Encapsulation: Showing only essential features without showing any background detail is called data abstraction.
+Wrapping up of data in a single unit is data encapsulation.
+
+Inheriternice: Acquring the properties of one class into another class is inheritence.
+
+Polymorphism: Single name multiple functionality.
+
+Dynamic Binding: Runtime memory allocation.
+
+Message Passing: Call by value / return by value.

@@ -1,0 +1,36 @@
+All the pre-defined keywords by which we can specify tupe of variable or data are called data type.
+
+Declaration of a variable means we are going to reserve some memory space in the system to hold a particular values.
+
+There are 2 types of daata type in Java.
+1. Primitive datatype
+2. Non Primitive datatype / Reference datatype / Userdefined datatype
+
+There are 8 Primitive datatype in Java
+
+1. Integer
+(a) byte    - 1 byte - 8 bits          Range= -128 to 127
+(b) short   - 2 byte - 16 bits         Range= -32768 to 32767
+(c) int     - 4 byte - 32 bits         Range= -2,147,483,648 to 2,147,483,647
+(d) long    - 8 byte - 64 bits     Range= -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+
+
+Formula to find range 
+
++ve = 2^(n-1)-1
+-ve = -2^(n-1)           n= no. of bits
+
+2. Float
+
+float - 4 byte
+double - 8 byte
+
+3. Boolean
+   true / false  - 1 bit
+
+4. Character
+char : 'a';   - 2 byte
+
+
+
+

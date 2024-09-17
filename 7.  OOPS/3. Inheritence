@@ -1,0 +1,37 @@
+Inheritance is one of the core concepts of Object-Oriented Programming (OOP) in Java. 
+
+It allows one class (called the subclass or child class) to inherit the properties (fields) and behaviors (methods) of another class (called the superclass or parent class). 
+
+This promotes code reusability, makes the application easier to maintain, and allows for hierarchical classifications.
+
+
+Key Concepts of Inheritance:
+
+1. Superclass (Parent Class): The class whose features are inherited is known as the superclass.
+2. Subclass (Child Class): The class that inherits from the superclass is called the subclass.
+3. extends Keyword: In Java, inheritance is implemented using the extends keyword.
+
+
+Types of Inheritance in Java
+
+1. Single Inheritance: A subclass inherits from one superclass.
+                       Example: Dog extends Animal.
+                       
+2. Multilevel Inheritance: A class can inherit from a subclass, forming a chain of inheritance.
+
+3. Hierarchical Inheritance: Multiple subclasses inherit from a single superclass.
+
+
+
+                                   //  IMPORTANT  //
+
+
+4. Multiple Inheritance (Not Supported Directly in Java):
+   Java does not support multiple inheritance with classes due to ambiguity (known as the Diamond Problem).
+   However, multiple inheritance can be achieved using interfaces.
+
+
+
+Inheritance and final Keyword
+   final Class: A class declared as final cannot be extended.
+   final Method: A method declared as final cannot be overridden by subclasses.

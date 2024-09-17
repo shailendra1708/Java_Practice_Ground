@@ -1,0 +1,100 @@
+// if statement
+if(){
+
+}
+
+// if-else statement
+
+if(){
+
+}
+else{
+
+}
+
+// else-if statement
+
+
+if(){
+
+}
+else if (){
+
+}
+else{
+
+}
+
+// Nested if else
+
+if (condition1)
+ {
+    if (condition2) 
+    {
+        block 1;
+
+        if (condition3) 
+        {
+            block 2;
+        } 
+        else 
+        {
+            block 3
+        }
+    } 
+    else
+     {
+        block 4;
+     }
+} 
+else {
+    block 5 ;
+}
+
+// Programm
+
+public class Syntax {
+    public static void main(String[] args) {
+        // Example student marks
+        int marks = 85;
+
+        // If-else statement to determine grade
+        if (marks >= 90) {
+            System.out.println("Grade: A");
+        } else if (marks >= 80) {
+            System.out.println("Grade: B");
+        } else if (marks >= 70) {
+            System.out.println("Grade: C");
+        } else if (marks >= 60) {
+            System.out.println("Grade: D");
+        } else {
+            System.out.println("Grade: F");
+        }
+    }
+}
+
+
+// Nested if else program
+
+public class Syntax {
+    public static void main(String[] args) {
+        // Example temperature in Celsius
+        int temperature = 25;
+
+        // Nested if-else statement to determine temperature condition
+        if (temperature >= 30) {
+            System.out.println("It is Hot.");
+        } else {
+            if (temperature >= 20) {
+                System.out.println("It is Warm.");
+            } else {
+                if (temperature >= 10) {
+                    System.out.println("It is Cold.");
+                } else {
+                    System.out.println("It is Freezing.");
+                }
+            }
+        }
+    }
+}
+

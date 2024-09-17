@@ -1,0 +1,23 @@
+
+In Java, a wrapper class is a class that encapsulates (wraps) a primitive data type (like int, char, etc.) into an object. This is useful when you need an object instead of a primitive data type, such as when using Java Collections (like ArrayList, HashMap), which cannot work with primitive types directly.
+
+List of Java Wrapper Classes
+Java provides the following wrapper classes for each primitive data type:
+
+1.Boolean - wraps the boolean primitive.
+2.Character - wraps the char primitive.
+3.Byte - wraps the byte primitive.
+4.Short - wraps the short primitive.
+5.Integer - wraps the int primitive.
+6.Long - wraps the long primitive.
+7.Float - wraps the float primitive.
+8.Double - wraps the double primitive.
+
+
+                //  Autoboxing and Unboxing
+
+Java provides a feature called autoboxing and unboxing to automatically convert between primitive types and their corresponding wrapper classes:
+
+Autoboxing: Automatic conversion of a primitive type to its corresponding wrapper class.
+
+Unboxing: Automatic conversion of a wrapper class to its corresponding primitive type.
