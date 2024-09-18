@@ -1,0 +1,5 @@
+
+The Collection interface in Java is part of the Java Collections Framework and provides the foundation for working with groups of objects. Some key methods of the Collection interface are:
+
+1. boolean add(E e): Adds the specified element to the collection if it is not already present (optional operation).
+
