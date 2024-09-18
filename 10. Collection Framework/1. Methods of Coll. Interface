@@ -3,3 +3,28 @@ The Collection interface in Java is part of the Java Collections Framework and p
 
 1. boolean add(E e): Adds the specified element to the collection if it is not already present (optional operation).
 
+2. boolean addAll(Collection<? extends E> c): Adds all elements from the specified collection to the current collection.
+
+3. void clear(): Removes all elements from the collection.
+
+4. boolean contains(Object o): Returns true if the collection contains the specified element.
+
+5. boolean containsAll(Collection<?> c): Returns true if the collection contains all elements from the specified collection.
+
+6. boolean isEmpty(): Returns true if the collection contains no elements.
+
+7. Iterator<E> iterator(): Returns an iterator over the elements in the collection.
+
+8. boolean remove(Object o): Removes a single instance of the specified element from the collection, if present.
+
+9. boolean removeAll(Collection<?> c): Removes all elements in the collection that are also contained in the specified collection.
+
+10. boolean retainAll(Collection<?> c): Retains only the elements in the collection that are  contained in the specified collection.
+
+11. int size(): Returns the number of elements in the collection.
+
+12. Object[] toArray(): Returns an array containing all elements of the collection.
+
+13. <T> T[] toArray(T[] a): Returns an array containing all elements in the collection, using the runtime type of the specified array.
+
+These methods provide the basis for manipulating collections in Java, and classes like List, Set, and Queue extend the Collection interface with additional functionality.
