@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Methods {
+public class Add {
     public static void main(String[] args) {
         // Create a collection (ArrayList)
         Collection<String> fruits = new ArrayList<>();
