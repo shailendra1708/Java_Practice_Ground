@@ -28,3 +28,26 @@ The Collection interface in Java is part of the Java Collections Framework and p
 13. <T> T[] toArray(T[] a): Returns an array containing all elements in the collection, using the runtime type of the specified array.
 
 These methods provide the basis for manipulating collections in Java, and classes like List, Set, and Queue extend the Collection interface with additional functionality.
+
+
+
+
+                                      // Iterator
+
+The Iterator interface is used to iterate over elements of a collection (such as List, Set, Map, etc.). It provides methods to traverse the collection and optionally remove elements from the underlying collection.
+
+Key Methods of Iterator:
+
+1. hasNext() : Returns true if there are more elements to iterate over.
+   
+   Syntax: boolean hasNext()
+
+2. next() : Returns the next element in the collection.
+   Throws NoSuchElementException if there are no more elements.
+
+   Syntax: E next()
+
+3. remove(): Removes the last element returned by the iterator. This method can only be called   once per call to next().
+
+Syntax : void remove()
+

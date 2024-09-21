@@ -1,4 +1,4 @@
-class Gen<P, W> { // placeholder for two types
+class Gen < P, W> { // placeholder for two types
     P a;
     W b;
 
