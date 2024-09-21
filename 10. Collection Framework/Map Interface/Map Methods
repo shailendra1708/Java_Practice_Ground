@@ -1,0 +1,163 @@
+In Java, a **Map** is an interface that represents a collection of key-value pairs, where each key is associated with exactly one value. Maps do not allow duplicate keys, but values can be duplicated. The most common implementations of the `Map` interface are **HashMap**, **TreeMap**, and **LinkedHashMap**.
+
+### Key Methods of the `Map` Interface:
+
+1. **`V put(K key, V value)`**
+   - Associates the specified value with the specified key in the map. If the map previously contained a mapping for the key, the old value is replaced.
+   - Example:
+     ```java
+     map.put("Apple", 1);
+     ```
+
+2. **`V get(Object key)`**
+   - Returns the value associated with the specified key, or `null` if the map contains no mapping for the key.
+   - Example:
+     ```java
+     Integer value = map.get("Apple");
+     ```
+
+3. **`V remove(Object key)`**
+   - Removes the mapping for the specified key from the map if it is present.
+   - Example:
+     ```java
+     map.remove("Apple");
+     ```
+
+4. **`boolean containsKey(Object key)`**
+   - Returns `true` if the map contains a mapping for the specified key.
+   - Example:
+     ```java
+     boolean hasKey = map.containsKey("Apple");
+     ```
+
+5. **`boolean containsValue(Object value)`**
+   - Returns `true` if the map contains one or more keys mapped to the specified value.
+   - Example:
+     ```java
+     boolean hasValue = map.containsValue(1);
+     ```
+
+6. **`int size()`**
+   - Returns the number of key-value mappings in the map.
+   - Example:
+     ```java
+     int size = map.size();
+     ```
+
+7. **`void clear()`**
+   - Removes all the mappings from the map, leaving it empty.
+   - Example:
+     ```java
+     map.clear();
+     ```
+
+8. **`Set<K> keySet()`**
+   - Returns a `Set` view of the keys contained in the map.
+   - Example:
+     ```java
+     Set<String> keys = map.keySet();
+     ```
+
+9. **`Collection<V> values()`**
+   - Returns a `Collection` view of the values contained in the map.
+   - Example:
+     ```java
+     Collection<Integer> values = map.values();
+     ```
+
+10. **`Set<Map.Entry<K, V>> entrySet()`**
+    - Returns a `Set` view of the key-value pairs (entries) contained in the map.
+    - Example:
+      ```java
+      Set<Map.Entry<String, Integer>> entries = map.entrySet();
+      ```
+
+11. **`void putAll(Map<? extends K, ? extends V> m)`**
+    - Copies all of the mappings from the specified map to this map.
+    - Example:
+      ```java
+      map.putAll(anotherMap);
+      ```
+
+12. **`V putIfAbsent(K key, V value)`**
+    - Inserts the value only if the specified key is not already associated with a value.
+    - Example:
+      ```java
+      map.putIfAbsent("Apple", 1);
+      ```
+
+### Common Implementations of the `Map` Interface:
+
+1. **`HashMap`**  
+   - A hash table-based implementation of the `Map` interface. It does not guarantee any order of elements.
+   - Example:
+     ```java
+     Map<String, Integer> hashMap = new HashMap<>();
+     ```
+
+2. **`TreeMap`**  
+   - A `Map` implementation that keeps the keys in **sorted** (natural or custom) order.
+   - Example:
+     ```java
+     Map<String, Integer> treeMap = new TreeMap<>();
+     ```
+
+3. **`LinkedHashMap`**  
+   - A `Map` implementation that maintains the insertion order of the elements.
+   - Example:
+     ```java
+     Map<String, Integer> linkedHashMap = new LinkedHashMap<>();
+     ```
+
+### Example Usage of a `HashMap`:
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapExample {
+    public static void main(String[] args) {
+        // Create a HashMap
+        Map<String, Integer> map = new HashMap<>();
+
+        // Add key-value pairs to the map
+        map.put("Apple", 1);
+        map.put("Banana", 2);
+        map.put("Orange", 3);
+
+        // Retrieve a value using a key
+        int value = map.get("Banana");  // Output: 2
+
+        // Check if a key or value exists
+        boolean hasApple = map.containsKey("Apple");  // true
+        boolean hasValue = map.containsValue(3);      // true
+
+        // Iterate through the map
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+
+        // Remove a key-value pair
+        map.remove("Orange");
+
+        // Get the size of the map
+        int size = map.size();  // Output: 2
+    }
+}
+```
+
+### Output:
+```
+Apple: 1
+Banana: 2
+```
+
+### Characteristics of Maps:
+
+- **No Duplicate Keys**: Each key is unique in a map, but values can be duplicated.
+- **Null Handling**: In `HashMap`, one `null` key is allowed, and multiple `null` values can be used. However, `TreeMap` does not allow `null` keys.
+- **Order**: The order of elements depends on the implementation:
+  - `HashMap` does not guarantee any order.
+  - `TreeMap` sorts keys.
+  - `LinkedHashMap` maintains insertion order.
+
+Let me know if you'd like more details on a specific `Map` implementation or more examples!
