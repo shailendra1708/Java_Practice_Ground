@@ -1,0 +1,132 @@
+The **SortedSet** interface in Java is a specialized set that maintains its elements in ascending order. It extends the **Set** interface and provides methods to access elements based on their natural order or a custom comparator. Some of the key implementations of `SortedSet` include `TreeSet`.
+
+### Key Methods of the `SortedSet` Interface:
+
+1. **`Comparator<? super E> comparator()`**
+   - Returns the comparator used to order the elements in this set, or `null` if the set uses the natural ordering of its elements.
+   - Example:
+     ```java
+     Comparator<String> comp = sortedSet.comparator();
+     ```
+
+2. **`E first()`**
+   - Returns the first (lowest) element currently in the set.
+   - Example:
+     ```java
+     E firstElement = sortedSet.first();
+     ```
+
+3. **`E last()`**
+   - Returns the last (highest) element currently in the set.
+   - Example:
+     ```java
+     E lastElement = sortedSet.last();
+     ```
+
+4. **`SortedSet<E> headSet(E toElement)`**
+   - Returns a view of the portion of this set whose elements are strictly less than `toElement`.
+   - Example:
+     ```java
+     SortedSet<E> headSet = sortedSet.headSet(toElement);
+     ```
+
+5. **`SortedSet<E> tailSet(E fromElement)`**
+   - Returns a view of the portion of this set whose elements are greater than or equal to `fromElement`.
+   - Example:
+     ```java
+     SortedSet<E> tailSet = sortedSet.tailSet(fromElement);
+     ```
+
+6. **`SortedSet<E> subSet(E fromElement, E toElement)`**
+   - Returns a view of the portion of this set whose elements range from `fromElement`, inclusive, to `toElement`, exclusive.
+   - Example:
+     ```java
+     SortedSet<E> subSet = sortedSet.subSet(fromElement, toElement);
+     ```
+
+7. **`boolean isEmpty()`**
+   - Returns `true` if the set contains no elements.
+   - Example:
+     ```java
+     boolean empty = sortedSet.isEmpty();
+     ```
+
+8. **`int size()`**
+   - Returns the number of elements in the set.
+   - Example:
+     ```java
+     int size = sortedSet.size();
+     ```
+
+9. **`boolean contains(Object o)`**
+   - Returns `true` if the set contains the specified element.
+   - Example:
+     ```java
+     boolean exists = sortedSet.contains("Apple");
+     ```
+
+10. **`boolean add(E e)`**
+    - Adds the specified element to the set if it is not already present.
+    - Example:
+      ```java
+      boolean added = sortedSet.add("Apple");
+      ```
+
+11. **`boolean remove(Object o)`**
+    - Removes the specified element from the set if it is present.
+    - Example:
+      ```java
+      boolean removed = sortedSet.remove("Banana");
+      ```
+
+12. **`Iterator<E> iterator()`**
+    - Returns an iterator over the elements in the set in ascending order.
+    - Example:
+      ```java
+      Iterator<E> it = sortedSet.iterator();
+      ```
+
+### Example Using `TreeSet` (a `SortedSet` Implementation):
+```java
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class SortedSetExample {
+    public static void main(String[] args) {
+        SortedSet<String> sortedSet = new TreeSet<>();
+        
+        // Add elements
+        sortedSet.add("Banana");
+        sortedSet.add("Apple");
+        sortedSet.add("Orange");
+
+        // Access first and last elements
+        String first = sortedSet.first(); // "Apple"
+        String last = sortedSet.last();   // "Orange"
+
+        // Get subsets
+        SortedSet<String> headSet = sortedSet.headSet("Orange"); // [Apple, Banana]
+        SortedSet<String> tailSet = sortedSet.tailSet("Banana"); // [Banana, Orange]
+        SortedSet<String> subSet = sortedSet.subSet("Apple", "Orange"); // [Apple, Banana]
+
+        // Iterate over the sorted set
+        for (String fruit : sortedSet) {
+            System.out.println(fruit);
+        }
+    }
+}
+```
+
+### Output:
+```
+Apple
+Banana
+Orange
+```
+
+### Key Characteristics of `SortedSet`:
+- The elements are sorted in **ascending order**.
+- Null elements are not allowed if the set uses the natural ordering of elements (e.g., `TreeSet` will throw a `NullPointerException`).
+- It is a navigable set of elements that supports range views (`subSet`, `headSet`, `tailSet`).
+
+Let me know if you need further examples or clarifications!

@@ -1,0 +1,90 @@
+The List interface in Java is part of the Java Collection Framework and extends the Collection interface. It represents an ordered collection of elements (also known as a sequence). Lists allow duplicate elements and provide control over where each element is inserted. It provides methods to manipulate and access elements by their position (index) in the list.
+
+Key Methods of the List Interface:
+
+Here's a numbered list of the methods you provided with their examples:
+
+1. **void add(int index, E element)**: Inserts the specified element at the specified position in the list.
+   ```java
+   list.add(1, "Apple");
+   ```
+
+2. **boolean add(E element)**: Appends the specified element to the end of the list.
+   ```java
+   list.add("Banana");
+   ```
+
+3. **boolean addAll(Collection<? extends E> c)**: Appends all elements from the specified collection to the end of the list.
+   ```java
+   list.addAll(anotherList);
+   ```
+
+4. **E get(int index)**: Returns the element at the specified position in the list.
+   ```java
+   String item = list.get(0);
+   ```
+
+5. **E set(int index, E element)**: Replaces the element at the specified position with the specified element.
+   ```java
+   list.set(1, "Orange");
+   ```
+
+6. **E remove(int index)**: Removes the element at the specified position in the list and returns it.
+   ```java
+   list.remove(2);
+   ```
+
+7. **boolean remove(Object o)**: Removes the first occurrence of the specified element from the list if it is present.
+   ```java
+   list.remove("Apple");
+   ```
+
+8. **int indexOf(Object o)**: Returns the index of the first occurrence of the specified element in the list, or -1 if the list does not contain the element.
+   ```java
+   int index = list.indexOf("Banana");
+   ```
+
+9. **int lastIndexOf(Object o)**: Returns the index of the last occurrence of the specified element in the list, or -1 if the list does not contain the element.
+   ```java
+   int lastIndex = list.lastIndexOf("Apple");
+   ```
+
+10. **List<E> subList(int fromIndex, int toIndex)**: Returns a view of the portion of this list between the specified `fromIndex` (inclusive) and `toIndex` (exclusive).
+   ```java
+   List<String> sublist = list.subList(1, 3);
+   ```
+
+11. **boolean isEmpty()**: Returns true if the list contains no elements.
+   ```java
+   boolean empty = list.isEmpty();
+   ```
+
+12. **int size()**: Returns the number of elements in the list.
+   ```java
+   int size = list.size();
+   ```
+
+13. **void clear()**: Removes all elements from the list.
+   ```java
+   list.clear();
+   ```
+
+14. **Iterator<E> iterator()**: Returns an iterator over the elements in the list.
+   ```java
+   Iterator<String> it = list.iterator();
+   ```
+
+15. **ListIterator<E> listIterator()**: Returns a list iterator over the elements in the list, starting from the beginning.
+   ```java
+   ListIterator<String> listIt = list.listIterator();
+   ```
+
+16. **ListIterator<E> listIterator(int index)**: Returns a list iterator starting at the specified position in the list.
+   ```java
+   ListIterator<String> listIt = list.listIterator(1);
+   ```
+
+17. **boolean contains(Object o)**: Returns true if the list contains the specified element.
+   ```java
+   boolean exists = list.contains("Orange");
+   ```
