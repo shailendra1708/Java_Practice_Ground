@@ -42,6 +42,7 @@ public class Main {
 - **clear()**: Removes all elements from the vector.
 - **contains(Object o)**: Checks if the vector contains a specific element.
 
+
 ### Pros and Cons:
 - **Pros**:
   - Thread-safe.
