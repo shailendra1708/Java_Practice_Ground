@@ -1,0 +1,54 @@
+In Java, a `Vector` class is part of the `java.util` package. It implements a dynamic array, which means it can grow or shrink in size as needed. `Vector` is synchronized, making it thread-safe, but it tends to be slower compared to alternatives like `ArrayList`. Here's an overview of the `Vector` class and how to use it:
+
+### Key Features:
+1. **Dynamic Array**: It grows or shrinks automatically.
+2. **Thread-Safe**: All its methods are synchronized, making it safe for use by multiple threads.
+3. **Legacy Class**: Introduced in JDK 1.0. While it's still part of Java, `ArrayList` is preferred in newer code because it offers better performance due to its lack of synchronization.
+
+### Creating a Vector
+```java
+import java.util.Vector;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating a vector of strings
+        Vector<String> vector = new Vector<>();
+
+        // Adding elements
+        vector.add("Apple");
+        vector.add("Banana");
+        vector.add("Cherry");
+
+        // Accessing elements
+        System.out.println("First element: " + vector.get(0));
+
+        // Removing elements
+        vector.remove(1); // removes "Banana"
+
+        // Iterating over the vector
+        for (String fruit : vector) {
+            System.out.println(fruit);
+        }
+    }
+}
+```
+
+### Key Methods:
+- **add(E e)**: Adds an element to the end of the vector.
+- **get(int index)**: Retrieves an element at a specific index.
+- **remove(int index)**: Removes an element at a specific index.
+- **size()**: Returns the number of elements in the vector.
+- **isEmpty()**: Checks if the vector is empty.
+- **clear()**: Removes all elements from the vector.
+- **contains(Object o)**: Checks if the vector contains a specific element.
+
+### Pros and Cons:
+- **Pros**:
+  - Thread-safe.
+  - Can grow dynamically as elements are added.
+  
+- **Cons**:
+  - Slower compared to `ArrayList` due to synchronization overhead.
+  - Not recommended for single-threaded environments unless thread safety is crucial.
+
+Let me know if you need more detailed examples or specific use cases for `Vector`.
