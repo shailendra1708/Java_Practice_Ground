@@ -1,0 +1,101 @@
+In JDBC, **Connection**, **Statement**, and **ResultSet** are core components for interacting with databases in Java.
+
+### 1. **Connection**
+The `Connection` interface in JDBC represents a session between the Java application and the database. It's used to establish a link with the database and manage transactions.
+
+#### How to create a Connection:
+```java
+Connection connection = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/yourDatabaseName", "username", "password");
+```
+
+- **DriverManager**: It manages the set of JDBC drivers and provides a method (`getConnection`) to establish a connection to a database.
+- **URL**: The database URL that typically follows the format `jdbc:databaseType://host:port/databaseName`.
+- **Username** and **Password**: Credentials for authentication to access the database.
+
+### 2. **Statement**
+The `Statement` interface is used to execute SQL queries against the database. It allows you to send SQL commands like `SELECT`, `INSERT`, `UPDATE`, and `DELETE`.
+
+#### How to create and use a Statement:
+```java
+Statement statement = connection.createStatement();
+```
+
+Once you have a `Statement`, you can execute SQL queries.
+
+- **executeQuery()**: For executing SELECT queries.
+- **executeUpdate()**: For executing INSERT, UPDATE, or DELETE queries.
+
+#### Example:
+```java
+// SELECT Query
+ResultSet resultSet = statement.executeQuery("SELECT * FROM employees");
+
+// INSERT Query
+int rowsAffected = statement.executeUpdate("INSERT INTO employees (name, salary) VALUES ('John', 4000)");
+```
+
+### 3. **ResultSet**
+The `ResultSet` interface represents the result set of a query. It is used to iterate through the results obtained from a SELECT query.
+
+#### How to handle a ResultSet:
+```java
+while (resultSet.next()) {
+    String name = resultSet.getString("name");
+    int salary = resultSet.getInt("salary");
+    System.out.println("Name: " + name + ", Salary: " + salary);
+}
+```
+
+- **next()**: Moves the cursor to the next row in the result set.
+- **getString()**, **getInt()**, etc.: These methods are used to retrieve values from the result set by specifying the column name or index.
+
+### Full Example:
+```java
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class JDBCExample {
+    public static void main(String[] args) {
+        String jdbcUrl = "jdbc:mysql://localhost:3306/myDatabase";
+        String username = "root";
+        String password = "password";
+        
+        try {
+            // Step 1: Establish connection to the database
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+            
+            // Step 2: Create a statement
+            Statement statement = connection.createStatement();
+            
+            // Step 3: Execute a query and get the result
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM employees");
+            
+            // Step 4: Iterate through the result set
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                int salary = resultSet.getInt("salary");
+                System.out.println("Name: " + name + ", Salary: " + salary);
+            }
+            
+            // Step 5: Close the resources
+            resultSet.close();
+            statement.close();
+            connection.close();
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Summary of Key Points:
+- **Connection**: Manages the link between Java and the database.
+- **Statement**: Sends SQL commands to the database.
+- **ResultSet**: Holds data retrieved from a SELECT query and allows for row-by-row processing.
+
+Always remember to close your `ResultSet`, `Statement`, and `Connection` to free up resources!
